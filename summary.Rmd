@@ -1,0 +1,29 @@
+---
+title: "Summary"
+output: html_document
+date: "2023-05-08"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+require(tidyverse)
+
+
+phones = read_csv("data/elp_3let_3phon_gpcs.csv") %>% 
+  pull(gpc)
+
+```
+
+
+## Questions
+Q1: If we structure the network to contain a number of hidden units equal to the number of sound-spellings that educators _would_ use to describe these words, does the network uncover those sound-spellings as the features of the words in the training set? Said differently: do hidden unit representations approximate symbolic/ sound-spelling patterns?
+
+Q2: To what extent do the features the network uncovers generate outside the contrived dataset? That is, how well would do these representations work in less carefully curated data (i.e., words that are closer what a child will actually encounter in the wild)? This gets to the question of how well kids do when they apply sound-spelling rules outside the carefully curated ("controlled") words that are used in phonics training.
+
+Q3: If we tune the network to find an optimal set (i.e., _number_) of features, to what extent does that system differentiate from the networks used in Q1-Q2? And what do the features in an optimized network encode?
+
+
+## Notes about phoneme symbols used
+The phoneme symbols are taken from the SAMPA standard, except for "{" (in SAMPA), which is "a" in DK's set, and "aI" which is "#" in DK's symbol set.
+
