@@ -13,7 +13,13 @@ require(tidyverse)
 phones = read_csv("data/elp_3let_3phon_gpcs.csv") %>% 
   pull(gpc)
 
+words = read_csv("data/elp_3let_3phon_letphononly.csv")
+tmp = read_csv('data/phones.csv')
 ```
+
+## Words
+All words in the set are both three letters or three phonemes
+
 
 
 ## Questions
@@ -26,4 +32,6 @@ Q3: If we tune the network to find an optimal set (i.e., _number_) of features, 
 
 ## Notes about phoneme symbols used
 The phoneme symbols are taken from the SAMPA standard, except for "{" (in SAMPA), which is "a" in DK's set, and "aI" which is "#" in DK's symbol set.
+
+
 
